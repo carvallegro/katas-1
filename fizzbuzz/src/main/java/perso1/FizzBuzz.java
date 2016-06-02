@@ -15,16 +15,21 @@ public enum FizzBuzz {
         this.representation = representation;
     }
 
+    private String representation(int i) {
+        return i % divisor == 0 ? this.representation : "";
+    }
+
     public static String transform(int i) {
-        if (i%(FIZZ.divisor * BUZZ.divisor)==0) {
-            return FIZZ.representation + BUZZ.representation;
+        String representation = "";
+
+        for (FizzBuzz value : FizzBuzz.values()) {
+            representation += value.representation(i);
         }
-        if (i%BUZZ.divisor==0) {
-            return BUZZ.representation;
+
+        if (representation.isEmpty()) {
+            representation += String.valueOf(i);
         }
-        if (i% FIZZ.divisor ==0) {
-            return FIZZ.representation;
-        }
-        return String.valueOf(i);
+
+        return representation;
     }
 }
