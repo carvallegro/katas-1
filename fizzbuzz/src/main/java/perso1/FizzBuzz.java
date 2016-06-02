@@ -3,33 +3,23 @@ package perso1;
 /**
  * Created by HadrienMP on 02/06/2016.
  */
-public enum FizzBuzz {
+public class FizzBuzz {
 
-    FIZZ(3, "Fizz"), BUZZ(5, "Buzz");
-
-    private int divisor;
-    private String representation;
-
-    FizzBuzz(int divisor, String representation) {
-        this.divisor = divisor;
-        this.representation = representation;
-    }
-
-    private String representation(int i) {
-        return i % divisor == 0 ? this.representation : "";
-    }
+    public static final String FIZZ = "Fizz";
+    public static final String BUZZ = "Buzz";
+    public static final int FIZZ_NUMBER = 3;
+    public static final int BUZZ_NUMBER = 5;
 
     public static String transform(int i) {
-        String representation = "";
-
-        for (FizzBuzz value : FizzBuzz.values()) {
-            representation += value.representation(i);
+        if (i%(FIZZ_NUMBER * BUZZ_NUMBER)==0) {
+            return FIZZ + BUZZ;
         }
-
-        if (representation.isEmpty()) {
-            representation += String.valueOf(i);
+        if (i%BUZZ_NUMBER==0) {
+            return BUZZ;
         }
-
-        return representation;
+        if (i% FIZZ_NUMBER ==0) {
+            return FIZZ;
+        }
+        return String.valueOf(i);
     }
 }
