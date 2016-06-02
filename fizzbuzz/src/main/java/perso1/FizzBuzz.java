@@ -3,16 +3,27 @@ package perso1;
 /**
  * Created by HadrienMP on 02/06/2016.
  */
-public class FizzBuzz {
+public enum FizzBuzz {
+
+    FIZZ(3, "Fizz"), BUZZ(5, "Buzz");
+
+    private int divisor;
+    private String representation;
+
+    FizzBuzz(int divisor, String representation) {
+        this.divisor = divisor;
+        this.representation = representation;
+    }
+
     public static String transform(int i) {
-        if (i%15==0) {
-            return "FizzBuzz";
+        if (i%(FIZZ.divisor * BUZZ.divisor)==0) {
+            return FIZZ.representation + BUZZ.representation;
         }
-        if (i%5==0) {
-            return "Buzz";
+        if (i%BUZZ.divisor==0) {
+            return BUZZ.representation;
         }
-        if (i%3==0) {
-            return "Fizz";
+        if (i% FIZZ.divisor ==0) {
+            return FIZZ.representation;
         }
         return String.valueOf(i);
     }
