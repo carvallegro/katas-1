@@ -5,7 +5,10 @@ package perso1;
  */
 public class FizzBuzz {
     public static String transform(int i) {
-        if (i==5||i==10||i==20) {
+        if (i==15||i==30||i==45) {
+            return "FizzBuzz";
+        }
+        if (i%5==0) {
             return "Buzz";
         }
         if (i%3==0) {

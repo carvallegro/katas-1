@@ -61,11 +61,27 @@ public class FizzBuzzTest {
         assertThat(fizzbuzz).isEqualTo("Buzz");
     }
 
-    // TODO test 15
-
     @Test
     public void twenty() {
         String fizzbuzz = FizzBuzz.transform(20);
         assertThat(fizzbuzz).isEqualTo("Buzz");
+    }
+
+    @Test
+    public void fifteen() {
+        String fizzbuzz = FizzBuzz.transform(15);
+        assertThat(fizzbuzz).isEqualTo("FizzBuzz");
+    }
+
+    @Test
+    public void fizzbuzz2() {
+        String fizzbuzz = FizzBuzz.transform(2*15);
+        assertThat(fizzbuzz).isEqualTo("FizzBuzz");
+    }
+
+    @Test
+    public void fizzbuzz3() {
+        String fizzbuzz = FizzBuzz.transform(3*15);
+        assertThat(fizzbuzz).isEqualTo("FizzBuzz");
     }
 }
