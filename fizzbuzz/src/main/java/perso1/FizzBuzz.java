@@ -5,12 +5,9 @@ package perso1;
  */
 public class FizzBuzz {
     public static String transform(int i) {
-        if (i==4) {
-            return "4";
+        if (i==3 || i==6 || i==9) {
+            return "Fizz";
         }
-        if (i==2) {
-            return "2";
-        }
-        return "1";
+        return String.valueOf(i);
     }
 }

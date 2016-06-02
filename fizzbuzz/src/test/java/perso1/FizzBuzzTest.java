@@ -22,7 +22,6 @@ public class FizzBuzzTest {
         assertThat(fizzbuzz).isEqualTo("2");
     }
 
-    // TODO test 3
     // TODO test null
     // TODO test negative
 
@@ -30,5 +29,23 @@ public class FizzBuzzTest {
     public void four() {
         String fizzbuzz = FizzBuzz.transform(4);
         assertThat(fizzbuzz).isEqualTo("4");
+    }
+
+    @Test
+    public void three() {
+        String fizzbuzz = FizzBuzz.transform(3);
+        assertThat(fizzbuzz).isEqualTo("Fizz");
+    }
+
+    @Test
+    public void six() {
+        String fizzbuzz = FizzBuzz.transform(6);
+        assertThat(fizzbuzz).isEqualTo("Fizz");
+    }
+
+    @Test
+    public void nine() {
+        String fizzbuzz = FizzBuzz.transform(9);
+        assertThat(fizzbuzz).isEqualTo("Fizz");
     }
 }
