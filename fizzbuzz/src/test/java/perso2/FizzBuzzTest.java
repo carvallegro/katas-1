@@ -1,7 +1,8 @@
 package perso2;
 
-import org.assertj.core.api.Java6Assertions;
 import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by had1men on 06/06/2016.
@@ -14,7 +15,13 @@ public class FizzBuzzTest {
     @Test
     public void zero() {
         String result = FizzBuzz.toString(0);
-        Java6Assertions.assertThat(result).isEqualTo("0");
+        assertThat(result).isEqualTo("0");
+    }
+
+    @Test
+    public void one() {
+        String result = FizzBuzz.toString(1);
+        assertThat(result).isEqualTo("1");
     }
 
 }

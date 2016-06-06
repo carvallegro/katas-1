@@ -6,6 +6,7 @@ package perso2;
 public class FizzBuzz {
 
     public static String toString(int number) {
-        return "0";
+        // Transformation 4 constant -> scalar ?
+        return String.valueOf(number);
     }
 }
