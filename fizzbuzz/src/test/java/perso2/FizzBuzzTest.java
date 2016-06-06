@@ -9,9 +9,6 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class FizzBuzzTest {
 
-    // TODO test negatif
-    // TODO test null
-
     @Test
     public void zero() {
         String result = FizzBuzz.toString(0);
@@ -22,6 +19,54 @@ public class FizzBuzzTest {
     public void one() {
         String result = FizzBuzz.toString(1);
         assertThat(result).isEqualTo("1");
+    }
+
+    @Test
+    public void three() {
+        String result = FizzBuzz.toString(3);
+        assertThat(result).isEqualTo("Fizz");
+    }
+
+    @Test
+    public void six() {
+        String result = FizzBuzz.toString(6);
+        assertThat(result).isEqualTo("Fizz");
+    }
+
+    @Test
+    public void five() {
+        String result = FizzBuzz.toString(5);
+        assertThat(result).isEqualTo("Buzz");
+    }
+
+    @Test
+    public void ten() {
+        String result = FizzBuzz.toString(10);
+        assertThat(result).isEqualTo("Buzz");
+    }
+
+    @Test
+    public void fifteen() {
+        String result = FizzBuzz.toString(15);
+        assertThat(result).isEqualTo("FizzBuzz");
+    }
+
+    @Test
+    public void thirty() {
+        String result = FizzBuzz.toString(30);
+        assertThat(result).isEqualTo("FizzBuzz");
+    }
+
+    @Test
+    public void negative() {
+        String result = FizzBuzz.toString(-1);
+        assertThat(result).isEqualTo("-1");
+    }
+
+    @Test
+    public void negativeThree() {
+        String result = FizzBuzz.toString(-3);
+        assertThat(result).isEqualTo("Fizz");
     }
 
 }
