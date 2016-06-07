@@ -5,15 +5,6 @@ package wordwrap;
  */
 public class Wordwrap {
     public static String wrap(String toWrap, int limit) {
-        if (toWrap.equals("aze rty")) {
-            return "aze\nrty";
-        }
-        if (toWrap.equals("azert y")) {
-            return "azert\ny";
-        }
-        if (toWrap.equals("te st")) {
-            return "te\nst";
-        }
-        return toWrap;
+        return toWrap.replace(" ", "\n");
     }
 }

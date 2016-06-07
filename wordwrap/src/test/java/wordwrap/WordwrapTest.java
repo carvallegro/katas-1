@@ -59,6 +59,18 @@ public class WordwrapTest {
     }
 
     @Test
+    public void three_space_doable() {
+        String wrapped = Wordwrap.wrap("test test test", 4);
+        Assertions.assertThat(wrapped).isEqualTo("test\ntest\ntest");
+    }
+
+    @Test
+    public void non_breaking_spaces() {
+        String wrapped = Wordwrap.wrap("test test test", 9);
+        Assertions.assertThat(wrapped).isEqualTo("test test\ntest");
+    }
+
+    @Test
     @Ignore
     // TODO test later
     public void nospace_lower() {
