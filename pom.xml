@@ -11,6 +11,7 @@
     <modules>
         <module>GildedRose</module>
         <module>fizzbuzz</module>
+        <module>wordwrap</module>
     </modules>
 
     <properties>
