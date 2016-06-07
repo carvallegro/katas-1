@@ -34,9 +34,36 @@ public class WordwrapTest {
     }
 
     @Test
+    // Should I have given any string rather than just "no space strings"
     public void nospace_bigger3() {
         String wrapped = Wordwrap.wrap("qdfqgf", 10);
         Assertions.assertThat(wrapped).isEqualTo("qdfqgf");
+    }
+
+    @Test
+    public void space_lower_doable() {
+        String wrapped = Wordwrap.wrap("aze rty", 5);
+        Assertions.assertThat(wrapped).isEqualTo("aze\nrty");
+    }
+
+    @Test
+    public void space_lower_doable2() {
+        String wrapped = Wordwrap.wrap("azert y", 5);
+        Assertions.assertThat(wrapped).isEqualTo("azert\ny");
+    }
+
+    @Test
+    public void space_lower_doable3() {
+        String wrapped = Wordwrap.wrap("te st", 2);
+        Assertions.assertThat(wrapped).isEqualTo("te\nst");
+    }
+
+    @Test
+    @Ignore
+    // TODO test later
+    public void nospace_lower() {
+        String wrapped = Wordwrap.wrap("azerty", 2);
+        Assertions.assertThat(wrapped).isEqualTo("az\nerty");
     }
 
     // TODO espaces autour
