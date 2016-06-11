@@ -1,4 +1,4 @@
-package wordwrap;
+package failure1;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Ignore;
