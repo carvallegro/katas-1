@@ -8,18 +8,27 @@ import java.util.List;
  */
 public class Wordwrap {
     public static String wrap(String toWrap, int limit) {
-        List<Integer> pointsToSplit = new ArrayList<>();
-        int spaceIndex = 0;
-        int lastSpaceIndex = 0;
-        while (lastSpaceIndex != -1) {
-            spaceIndex = toWrap.indexOf(' ', lastSpaceIndex +1);
 
-            if (spaceIndex > limit || spaceIndex == -1 && lastSpaceIndex != 0) {
-                toWrap = toWrap.substring(0, lastSpaceIndex) + "\n" + toWrap.substring(lastSpaceIndex + 1, toWrap.length());
+        String[] parts = toWrap.split(" ");
+        List<String> lines = new ArrayList<>();
+        String line = "";
+        for (String part : parts) {
+            String separator = line.length() == 0 ? "" : " ";
+
+            if (line.length() + separator.length() + part.length() > limit) {
+                lines.add(line);
+                line = "";
             }
-
-            lastSpaceIndex = spaceIndex;
+            separator = line.length() == 0 ? "" : " ";
+            line += separator + part;
         }
-        return toWrap;
+        if (!"".equals(line))
+            lines.add(line);
+
+        return String.join("\n", lines);
+    }
+
+    private static String replaceByLineFeedAt(String toAlter, int index) {
+        return toAlter.substring(0, index) + "\n" + toAlter.substring(index + 1, toAlter.length());
     }
 }

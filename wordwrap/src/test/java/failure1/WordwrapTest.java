@@ -71,6 +71,12 @@ public class WordwrapTest {
     }
 
     @Test
+    public void non_breaking_spaces_multilines() {
+        String wrapped = Wordwrap.wrap("test test test test test test test test test test ", 9);
+        Assertions.assertThat(wrapped).isEqualTo("test test\ntest test\ntest test\ntest test\ntest test");
+    }
+
+    @Test
     @Ignore
     // TODO test later
     public void nospace_lower() {
