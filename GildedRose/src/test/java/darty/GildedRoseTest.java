@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 public class GildedRoseTest {
 
-    public static final String GOLDEN_MASTER_PATH = "D:\\Info\\Projets Java\\Katas\\gildedrose\\src\\test\\java\\darty\\golden-master.txt";
+    public static final String GOLDEN_MASTER_PATH = "/home/hadrienmp/Projets/katas/GildedRose/src/test/java/darty/golden-master.txt";
 
     @Test
     public void golden_master() throws IOException {
