@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>GildedRose</module>
+        <module>gilded_rose</module>
         <module>fizzbuzz</module>
         <module>wordwrap</module>
         <module>roman_numerals</module>
