@@ -12,6 +12,7 @@
         <module>GildedRose</module>
         <module>fizzbuzz</module>
         <module>wordwrap</module>
+        <module>roman_numerals</module>
     </modules>
 
     <properties>
