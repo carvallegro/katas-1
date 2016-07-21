@@ -59,4 +59,13 @@ public class NumberTest {
 
         assertThat(romanNumber).isEqualTo("II");
     }
+
+    @Test
+    public void twenty() {
+        Number service = new Number(20);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("XX");
+    }
 }
