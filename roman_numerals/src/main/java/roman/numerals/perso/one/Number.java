@@ -10,6 +10,9 @@ class Number {
     String toRomanNumeral() {
 
         for (RomanSign romanSign : RomanSign.values()) {
+            if (romanSign.getNumber() == value + 1 && romanSign != RomanSign.I) {
+                return RomanSign.I + romanSign.getSign();
+            }
             if (value >= romanSign.getNumber()) {
                 return romanSign.getSign() + new Number(value - romanSign.getNumber()).toRomanNumeral();
             }

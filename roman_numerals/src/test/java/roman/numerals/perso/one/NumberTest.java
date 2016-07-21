@@ -94,4 +94,66 @@ public class NumberTest {
 
         assertThat(romanNumber).isEqualTo("XXX");
     }
+
+    /*
+     * ##########################################################################
+     *
+     * Two different letters
+     *
+     * ##########################################################################
+     */
+
+    @Test
+    public void six() {
+        Number service = new Number(6);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("VI");
+    }
+
+    @Test
+    public void eleven() {
+        Number service = new Number(11);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("XI");
+    }
+
+    @Test
+    public void fifteen() {
+        Number service = new Number(15);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("XV");
+    }
+
+    @Test
+    public void four() {
+        Number service = new Number(4);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("IV");
+    }
+
+    @Test
+    public void nine() {
+        Number service = new Number(9);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("IX");
+    }
+
+    @Test
+    public void nineteen() {
+        Number service = new Number(19);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("XIX");
+    }
 }
