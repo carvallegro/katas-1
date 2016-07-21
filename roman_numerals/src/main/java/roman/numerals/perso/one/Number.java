@@ -1,17 +1,7 @@
 package roman.numerals.perso.one;
 
-import java.util.HashMap;
-import java.util.Map;
-
 class Number {
     private int value;
-
-    private static final Map<Integer,String> ROMAN_MAP = new HashMap<>();
-
-    static {
-        ROMAN_MAP.put(5, "V");
-        ROMAN_MAP.put(10, "X");
-    }
 
     Number(int value) {
         this.value = value;
@@ -19,12 +9,34 @@ class Number {
 
     String toRomanNumeral() {
 
-        for (Map.Entry<Integer, String> roman : ROMAN_MAP.entrySet()) {
-            if (value == roman.getKey()) {
-                return roman.getValue();
+        for (RomanSign romanSign : RomanSign.values()) {
+            if (value >= romanSign.getNumber()) {
+                return romanSign.getSign() + new Number(value - romanSign.getNumber()).toRomanNumeral();
             }
         }
 
-        return "I";
+        return "";
+    }
+
+    private enum RomanSign {
+        X(10, "X"),
+        V(5, "V"),
+        I(1, "I");
+
+        private int number;
+        private String sign;
+
+        RomanSign(int number, String sign) {
+            this.number = number;
+            this.sign = sign;
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+        public String getSign() {
+            return sign;
+        }
     }
 }

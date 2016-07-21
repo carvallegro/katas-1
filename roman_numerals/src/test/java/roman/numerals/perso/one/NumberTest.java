@@ -8,9 +8,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class NumberTest {
 
+    /*
+     * ##########################################################################
+     *
+     * Single Letters
+     *
+     * ##########################################################################
+     */
+
     @Test
     public void one() {
-        roman.numerals.perso.one.Number service = new roman.numerals.perso.one.Number(1);
+        Number service = new Number(1);
 
         String romanNumber = service.toRomanNumeral();
 
@@ -19,7 +27,7 @@ public class NumberTest {
 
     @Test
     public void five() {
-        roman.numerals.perso.one.Number service = new roman.numerals.perso.one.Number(5);
+        Number service = new Number(5);
 
         String romanNumber = service.toRomanNumeral();
 
@@ -28,10 +36,27 @@ public class NumberTest {
 
     @Test
     public void ten() {
-        roman.numerals.perso.one.Number service = new roman.numerals.perso.one.Number(10);
+        Number service = new Number(10);
 
         String romanNumber = service.toRomanNumeral();
 
         assertThat(romanNumber).isEqualTo("X");
+    }
+
+    /*
+     * ##########################################################################
+     *
+     * Double Letters
+     *
+     * ##########################################################################
+     */
+
+    @Test
+    public void two() {
+        Number service = new Number(2);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("II");
     }
 }
