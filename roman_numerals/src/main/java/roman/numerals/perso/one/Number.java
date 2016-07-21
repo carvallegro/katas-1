@@ -22,6 +22,10 @@ class Number {
     }
 
     private enum RomanSign {
+        M( 1000, "M" ),
+        D( 500, "D" ),
+        C( 100, "C" ),
+        L(50, "L"),
         X(10, "X"),
         V(5, "V"),
         I(1, "I");
