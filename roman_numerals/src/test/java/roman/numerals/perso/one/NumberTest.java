@@ -68,4 +68,30 @@ public class NumberTest {
 
         assertThat(romanNumber).isEqualTo("XX");
     }
+
+    /*
+     * ##########################################################################
+     *
+     * Triple Letters
+     *
+     * ##########################################################################
+     */
+
+    @Test
+    public void three() {
+        Number service = new Number(3);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("III");
+    }
+
+    @Test
+    public void thirty() {
+        Number service = new Number(30);
+
+        String romanNumber = service.toRomanNumeral();
+
+        assertThat(romanNumber).isEqualTo("XXX");
+    }
 }
