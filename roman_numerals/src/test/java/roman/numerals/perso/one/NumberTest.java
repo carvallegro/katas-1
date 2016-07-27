@@ -79,18 +79,34 @@ public class NumberTest {
         check(given, expected);
     }
 
-    public static Collection<Object[]> differentLettersSubstraction() {
+    public static Collection<Object[]> differentLettersSubstractionEasy() {
         return Arrays.asList(
                 new Object[] { 4, "IV" },
                 new Object[] { 9, "IX" },
                 new Object[] { 19, "XIX" },
-                new Object[] { 45, "XLV" }
+                new Object[] { 40, "XL" },
+                new Object[] { 90, "XC" },
+                new Object[] { 400, "CD" },
+                new Object[] { 900, "CM" }
         );
     }
 
     @Test
-    @Parameters(method = "differentLettersSubstraction")
-    public void different_letters_substraction(int given, String expected) {
+    @Parameters(method = "differentLettersSubstractionEasy")
+    public void different_letters_substraction_easy(int given, String expected) {
+        check(given, expected);
+    }
+
+    public static Collection<Object[]> differentLettersSubstractionHarder() {
+        return Arrays.asList(
+            new Object[] { 45, "XLV" },
+            new Object[] { 2999, "MMCMXCIX" }
+        );
+    }
+
+    @Test
+    @Parameters(method = "differentLettersSubstractionHarder")
+    public void different_letters_substraction_harder(int given, String expected) {
         check(given, expected);
     }
 
