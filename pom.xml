@@ -34,6 +34,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Property based testing -->
         <dependency>
             <groupId>com.pholser</groupId>
             <artifactId>junit-quickcheck-core</artifactId>
@@ -77,6 +78,16 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.pitest</groupId>
+                    <artifactId>pitest-maven</artifactId>
+                    <version>1.10.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 

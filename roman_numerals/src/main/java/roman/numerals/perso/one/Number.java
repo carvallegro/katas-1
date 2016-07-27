@@ -1,5 +1,7 @@
 package roman.numerals.perso.one;
 
+import java.util.Iterator;
+
 class Number {
     private int value;
 
@@ -8,42 +10,27 @@ class Number {
     }
 
     String toRomanNumeral() {
+        if (value == 0) {
+            return "";
+        }
 
-        for (RomanSign romanSign : RomanSign.values()) {
-            if (romanSign.getNumber() == value + 1 && romanSign != RomanSign.I) {
-                return RomanSign.I + romanSign.getSign();
-            }
-            if (value >= romanSign.getNumber()) {
-                return romanSign.getSign() + new Number(value - romanSign.getNumber()).toRomanNumeral();
+        String firstHalfOfString = "";
+        int leftToTransform = value;
+
+        Iterator<RomanSign> candidates = RomanSign.fromBiggestToSmallest().iterator();
+        while (firstHalfOfString.isEmpty() && candidates.hasNext()) {
+            RomanSign romanSign = candidates.next();
+
+            if (romanSign.canPrefix(value)) {
+                leftToTransform = this.value - romanSign.getNumber();
+                firstHalfOfString = romanSign.name();
+            } else if (romanSign.canPrefixWithSubstraction(value)) {
+                leftToTransform = romanSign.getLeftAfterSubstraction(value);
+                firstHalfOfString = romanSign.nextSubstractible().name() + romanSign.name();
             }
         }
 
-        return "";
+        return firstHalfOfString + new Number(leftToTransform).toRomanNumeral();
     }
 
-    private enum RomanSign {
-        M( 1000, "M" ),
-        D( 500, "D" ),
-        C( 100, "C" ),
-        L(50, "L"),
-        X(10, "X"),
-        V(5, "V"),
-        I(1, "I");
-
-        private int number;
-        private String sign;
-
-        RomanSign(int number, String sign) {
-            this.number = number;
-            this.sign = sign;
-        }
-
-        public int getNumber() {
-            return number;
-        }
-
-        public String getSign() {
-            return sign;
-        }
-    }
 }
