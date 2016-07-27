@@ -1,11 +1,20 @@
 package yahtzee.perso.one;
 
-public class Yahtzee {
-    public Yahtzee(int dice1, int dice2, int dice3, int dice4, int dice5) {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Yahtzee {
+    private List<Integer> diceResults = new ArrayList<>();
+
+    public Yahtzee(int dice1, int dice2, int dice3, int dice4, int dice5) {
+        diceResults.add(dice1);
+        diceResults.add(dice2);
+        diceResults.add(dice3);
+        diceResults.add(dice4);
+        diceResults.add(dice5);
     }
 
-    public int score(YahtzeeCategories ones) {
-        return 1;
+    public int score(YahtzeeCategory category) {
+        return diceResults.stream().filter(dice -> dice == category.getNumber()).mapToInt(x -> x).sum();
     }
 }
