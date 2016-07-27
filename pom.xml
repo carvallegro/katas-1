@@ -13,6 +13,7 @@
         <module>fizzbuzz</module>
         <module>wordwrap</module>
         <module>roman_numerals</module>
+        <module>yahtzee</module>
     </modules>
 
     <properties>
