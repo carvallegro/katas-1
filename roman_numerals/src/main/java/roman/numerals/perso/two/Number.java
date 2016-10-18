@@ -5,6 +5,19 @@ import java.util.stream.IntStream;
 
 class Number {
 
+    private static final String ONE = "I";
+    private static final String FOUR = "IV";
+    private static final String FIVE = "V";
+    private static final String NINE = "IX";
+    private static final String TEN = "X";
+    private static final String FOURTY = "XL";
+    private static final String FIFTY = "L";
+    private static final String NINETY = "XC";
+    private static final String HUNDRED = "C";
+    private static final String FOUR_HUNDRED = "CD";
+    private static final String FIVE_HUNDRED = "D";
+    private static final String NINE_HUNDRED = "CM";
+    private static final String THOUSAND = "M";
     private int value;
 
     Number(int value) {
@@ -14,19 +27,19 @@ class Number {
     String toRoman() {
 
         return IntStream.range(0, value)
-                .mapToObj(i ->      "I")
+                .mapToObj(i ->      ONE)
                 .collect(Collectors.joining())
-                .replace("IIIII",   "V")
-                .replace("IIII",    "IV")
-                .replace("VV",      "X")
-                .replace("VIV",     "IX")
-                .replace("XXXXX",   "L")
-                .replace("XXXX",    "XL")
-                .replace("LL",      "C")
-                .replace("LXL",     "XC")
-                .replace("CCCCC",   "D")
-                .replace("CCCC",    "CD")
-                .replace("DD",      "M")
-                .replace("DCD",     "CM");
+                .replace("IIIII",                       FIVE)
+                .replace("IIII",                        FOUR)
+                .replace(FIVE + FIVE,                   TEN)
+                .replace(FIVE + FOUR,                   NINE)
+                .replace("XXXXX",                       FIFTY)
+                .replace("XXXX",                        FOURTY)
+                .replace(FIFTY + FIFTY,                 HUNDRED)
+                .replace(FIFTY + FOURTY,                NINETY)
+                .replace("CCCCC",                       FIVE_HUNDRED)
+                .replace("CCCC",                        FOUR_HUNDRED)
+                .replace(FIVE_HUNDRED + FIVE_HUNDRED,   THOUSAND)
+                .replace(FIVE_HUNDRED + FOUR_HUNDRED,   NINE_HUNDRED);
     }
 }
