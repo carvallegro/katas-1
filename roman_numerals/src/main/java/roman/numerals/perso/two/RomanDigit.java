@@ -34,7 +34,7 @@ enum RomanDigit {
                 .collect(Collectors.joining());
     }
 
-    public String getRepresentation() {
+    public String toString() {
         return representation;
     }
 }
