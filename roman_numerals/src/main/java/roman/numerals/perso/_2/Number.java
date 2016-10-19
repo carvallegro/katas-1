@@ -1,9 +1,9 @@
-package roman.numerals.perso.two;
+package roman.numerals.perso._2;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static roman.numerals.perso.two.RomanDigit.*;
+import static roman.numerals.perso._2.RomanDigit.*;
 
 class Number {
 
