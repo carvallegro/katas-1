@@ -43,8 +43,8 @@ public class NumberTest {
 
     @Test
     public void _7() {
-        String roman = Number.toRoman(6);
-        assertThat(roman).isEqualTo("VI");
+        String roman = Number.toRoman(7);
+        assertThat(roman).isEqualTo("VII");
     }
 
     @Test
@@ -88,6 +88,12 @@ public class NumberTest {
     }
 
     // TODO 40
+
+    @Test
+    public void _49() {
+        String roman = Number.toRoman(49);
+        assertThat(roman).isEqualTo("XLIX");
+    }
 
     @Test
     public void _50() {
