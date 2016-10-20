@@ -3,6 +3,7 @@ package roman.numerals.perso._3;
 import java.util.Arrays;
 
 enum RomanDigit {
+    _1000(1000, "M"),
     _500(500, "D"),
     _100(100, "C"),
     _50(50, "L"),
