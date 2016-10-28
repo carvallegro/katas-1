@@ -1,5 +1,6 @@
-package darty;
+package object;
 
+import object.TexttestFixture;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -9,23 +10,20 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class GildedRoseTest {
-
-    public static final String GOLDEN_MASTER_PATH = "/home/carvallegro/projects/coding_dojo/katas-HMP/gilded_rose/src/test/java/darty/golden-master.txt";
+    public static final String GOLDEN_MASTER_PATH = "/home/carvallegro/projects/coding_dojo/katas-HMP/gilded_rose/src/test/java/object/golden-master.txt";
 
     @Test
     public void golden_master() throws IOException {
         List<String> goldenMaster = Files.readAllLines(Paths.get(GOLDEN_MASTER_PATH), StandardCharsets.UTF_8);
-        System.out.print(goldenMaster);
+        System.out.println(String.join("\n", goldenMaster));
 
-        List<String> ouput = TextTestFixture.runGoldenMaster(new String[] {});
+        List<String> output = TexttestFixture.runGoldenMaster(new String[] {});
+        output.remove(output.size() - 1);
 
-        ouput.remove(ouput.size() - 1);
-
-        Assertions.assertThat(ouput).isEqualTo(goldenMaster);
-
+        Assertions.assertThat(output).isEqualTo(goldenMaster);
     }
 
     @Test
